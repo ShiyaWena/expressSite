@@ -1,4 +1,12 @@
 doctype html
+script.
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-87974416-1', 'auto');
+  ga('send', 'pageview');
+
 html(lang='en')
   head
     meta(charset='utf-8')
@@ -39,15 +47,16 @@ html(lang='en')
       text-align: center;
       color: #B96A9A;
       font-size: 40px;
-      line-height: 30px;
+      line-height: 40px;
       }
       .form-signin-banner-action {
       font-family: "Times New Roman", Times, serif;
       font-weight: bold;
-      line-height: 20px;
+      line-height: 30px;
       text-align: center;
       color: #9C1C6B;
-      font-size: 25px;
+      font-size: 28px;
+      margin: 20px;
       }
       .form-signin-text {
       font-size: 12px;
@@ -76,13 +85,16 @@ html(lang='en')
     .container
       form.form-signin 
         p.form-signin-banner-main Put your skin in the hands 
-        p.form-signin-banner-main of some one whose passion it 
-        p.form-signin-banner-main is to make it beautiful 
+         br 
+         | of some one whose passion it 
+         br 
+         | to make it beautiful 
         p.form-signin-banner-action Sign up today for free beauty tips
-        p.form-signin-banner-action delivered straight to your inbox
+         br 
+         | delivered straight to your inbox
         input.input-block-level(type='text', placeholder='Name')
         input.input-block-level(type='text', placeholder='Email Address')
-        button.btn.btn-large(type='submit') Sign me up
+        button.btn.btn-large(type='submit' onClick="ga('set', 'signUp', 1);") Sign me up
         p.form-signin-text
-         a(href = "#") No thank you
+         a(href = "#" onClick="ga('set', 'noThanks', 1);") No thank you
      
